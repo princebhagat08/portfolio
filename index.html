@@ -1004,19 +1004,7 @@
   <!-- SCRIPTS -->
 
   <!-- Firebase Script -->
-  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAcq2vn_JbRNjh4v7XSCStnhClSrkUIgG8",
-      authDomain: "aditya-sharma.firebaseapp.com",
-      databaseURL: "https://aditya-sharma.firebaseio.com",
-      projectId: "aditya-sharma",
-      storageBucket: "",
-      messagingSenderId: "690857645130",
-    };
-    firebase.initializeApp(config);
-  </script>
+  
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -1061,78 +1049,9 @@
     });
   </script>
 
-  <!-- Script for form data submission -->
-  <script type="text/javascript">
-    var $form = $("form#contact-form"),
-      url =
-        "https://script.google.com/macros/s/AKfycbwegW0Nz44ATU0G1sbdmbSJUI76ZsSBDJ0sZIsA2cSnTYCzoHYf/exec";
+ 
 
-    var $nameInp = $("input#name");
-    var $emailInp = $("input#email");
-    var $subjectInp = $("input#subject");
-    var $messageInp = $("textarea#message");
-
-    $("#submit-form").on("click", function (e) {
-      console.log("Clicked!");
-      console.log("Name: ", $nameInp[0]);
-      console.log("Name validity: ", $nameInp[0].checkValidity());
-      e.preventDefault();
-
-      // validation check
-      if (!$nameInp[0].checkValidity()) {
-        $nameInp.addClass("error");
-        // console.log('Invalid Input!');
-      } else if (!$emailInp[0].checkValidity()) {
-        $emailInp.addClass("error");
-      } else if (!$subjectInp[0].checkValidity()) {
-        $subjectInp.addClass("error");
-      } else if (!$messageInp[0].checkValidity()) {
-        $messageInp.addClass("error");
-      } else {
-        // send AJAX request
-        var formData = $.ajax({
-          url: url,
-          method: "GET",
-          dataType: "json",
-          data: $form.serializeArray(),
-          success: (res) => {
-            clearFields();
-            console.log(res);
-            alert("Submitted!");
-          },
-        });
-      }
-    });
-
-    function clearFields() {
-      document.getElementById("contact-form").reset();
-      $form[0].classList.remove("error");
-    }
-  </script>
-
-  <!-- Script to remove red border -->
-  <script type="text/javascript">
-    var $nameInp = $("input#name");
-    var $emailInp = $("input#email");
-    var $subjectInp = $("input#subject");
-    var $messageIdInp = $("textarea#message");
-
-    $nameInp.focus(function () {
-      $nameInp.removeClass("error");
-    });
-    $emailInp.focus(function () {
-      $emailInp.removeClass("error");
-    });
-    $subjectInp.focus(function () {
-      $subjectInp.removeClass("error");
-    });
-    $messageInp.focus(function () {
-      $messageInp.removeClass("error");
-    });
-  </script>
-
-  <script data-cfasync="false" type="text/javascript"
-    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+  
 </body>
 
 </html>
